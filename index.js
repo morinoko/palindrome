@@ -16,9 +16,9 @@ function Phrase(content) {
 
   // Returns the letters in the content, without punctuation or spaces
   this.letters = function letters() {
-    const letterRegex = /[a-z]/i;
+    const letterRegex = /[a-z]/gi;
 
-    return Array.from(this.content).filter(char => char.match(letterRegex)).join("");
+    return (this.content.match(letterRegex) || []).join("");
   }
 
   // Returns true for a palindrome, false otherwise
